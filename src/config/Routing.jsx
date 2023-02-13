@@ -4,52 +4,20 @@ import Index from "../components/Index";
 import { ExampleContext } from "../context/ExampleContext";
 import { NelsonContext } from "../context/NelsonContext";
 
-const Home = () => {
-    const example = useContext(ExampleContext);
-    const change = () => {
-        example.setSaludo("Xddddd sos re troll");
-    };
 
-    return (
-        <>
-            <Index />
-            <h1>{example.saludo}</h1>
-            <h1>Home</h1>
-            <button onClick={change}></button>
-        </>
-    );
-};
-const SearchPage = () => {
-    const bicho = useContext(NelsonContext);
-
-    const changeSiu = () => {
-        bicho.setSiu('Madre mia el Bicho')
-    }
-
-    return (
-        <>
-            <Index />
-            <h1>Search Page</h1>
-            <p>{bicho.siu}</p>
-            <button onClick={changeSiu}></button>
-        </>
-    );
-};
 const NotFound = () => {
     return (
         <>
             <Index />
             <h1>404 not Found</h1>
-            <h5></h5>
         </>
     );
 };
 export const Routing = () => {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/search-page" element={<SearchPage />} />
+            <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
-    );
-};
+    )
+}

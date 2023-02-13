@@ -1,19 +1,11 @@
-import { useContext } from "react";
 import { NavLink } from "./NavLink";
 const index = () => {
     return (
         <div>
-            <h1>React Router dom</h1>
-            <ul>
-                <li>
-                    <NavLink to="/">Home </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/search-page">SearchPage</NavLink>
-                </li>
-            </ul>
+            <NavLink to="/">Home </NavLink>
+            <NavLink to="/login">Log in</NavLink>
         </div>
-    );
+    )
 };
 
 export default index;

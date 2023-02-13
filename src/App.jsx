@@ -1,7 +1,5 @@
 import React from "react";
-import "./App.css";
 import { Routing } from "./config/Routing";
-import ExampleContextProvider from "./context/ExampleContext";
 import Provider from "./Provider";
 function App() {
     return (
