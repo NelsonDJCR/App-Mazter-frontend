@@ -1,11 +1,20 @@
+import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Index from "../components/Index";
+import { ExampleContext } from "../context/ExampleContext";
 
 const Home = () => {
+    const example = useContext(ExampleContext);
+    const change = () => {
+        example.setSaludo("Xddddd sos re troll");
+    };
+
     return (
         <>
             <Index />
+            <h1>{example.saludo}</h1>
             <h1>Home</h1>
+            <button onClick={change}></button>
         </>
     );
 };
@@ -26,7 +35,6 @@ const NotFound = () => {
         </>
     );
 };
-
 export const Routing = () => {
     return (
         <Routes>
