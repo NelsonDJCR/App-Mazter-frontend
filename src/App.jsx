@@ -1,15 +1,6 @@
-// import "./App.css";
-import {
-    Route,
-    Routes,
-    NavLink,
-    Link,
-    useParams,
-    Outlet,
-} from "react-router-dom";
-
-
-
+import "./App.css";
+import { Route, Routes, Link, useParams, Outlet } from "react-router-dom";
+import { NavLink } from "./components/NavLink";
 const Tacos = () => {
     const { name } = useParams();
     return (
@@ -38,11 +29,9 @@ const SearchPage = () => {
             <h1>Search Page</h1>
             <ul>
                 {tacos.map((taco) => (
-                    <>
-                        <li key={taco}>
-                            <Link to={`/tacos/` + taco}>{taco}</Link>
-                        </li>
-                    </>
+                    <li key={taco}>
+                        <Link to={`/tacos/` + taco}>{taco}</Link>
+                    </li>
                 ))}
             </ul>
         </>
@@ -64,24 +53,10 @@ function App() {
             <h1>React Router dom</h1>
             <ul>
                 <li>
-                    <NavLink
-                        className={({ isActive }) => {
-                            return isActive ? "is-active" : undefined;
-                        }}
-                        to="/"
-                    >
-                        Home
-                    </NavLink>
+                    <NavLink to="/">Home </NavLink>
                 </li>
                 <li>
-                <NavLink
-                        className={({ isActive }) => {
-                            return isActive ? "is-active" : undefined;
-                        }}
-                        to="/search-page"
-                    >
-                        SearchPage
-                    </NavLink>
+                    <NavLink to="/search-page">SearchPage</NavLink>
                 </li>
             </ul>
             <Routes>
