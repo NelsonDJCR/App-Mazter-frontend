@@ -1,5 +1,5 @@
+import { useContext } from "react";
 import { NavLink } from "./NavLink";
-
 const index = () => {
     return (
         <div>
