@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Index from "../components/Index";
 import { ExampleContext } from "../context/ExampleContext";
+import { NelsonContext } from "../context/NelsonContext";
 
 const Home = () => {
     const example = useContext(ExampleContext);
@@ -19,10 +20,18 @@ const Home = () => {
     );
 };
 const SearchPage = () => {
+    const bicho = useContext(NelsonContext);
+
+    const changeSiu = () => {
+        bicho.setSiu('Madre mia el Bicho')
+    }
+
     return (
         <>
             <Index />
             <h1>Search Page</h1>
+            <p>{bicho.siu}</p>
+            <button onClick={changeSiu}></button>
         </>
     );
 };
