@@ -3,7 +3,7 @@ import NelsonContextProvider from "./context/NelsonContext";
 export default function Provider({ children }) {
     return (
         <NelsonContextProvider>
-            <ExampleContextProvider>{children}</ExampleContextProvider>;
+            <ExampleContextProvider>{children}</ExampleContextProvider>
         </NelsonContextProvider>
     );
 }
