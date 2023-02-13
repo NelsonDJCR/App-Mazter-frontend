@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes, Link, useParams, Outlet } from "react-router-dom";
-import { NavLink } from "./components/NavLink";
+import Index from "./components/Index";
 const Tacos = () => {
     const { name } = useParams();
     return (
@@ -50,15 +50,7 @@ const NotFound = () => {
 function App() {
     return (
         <div className="App">
-            <h1>React Router dom</h1>
-            <ul>
-                <li>
-                    <NavLink to="/">Home </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/search-page">SearchPage</NavLink>
-                </li>
-            </ul>
+            <Index/>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/search-page" element={<SearchPage />} />
