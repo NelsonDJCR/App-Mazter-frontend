@@ -8,14 +8,8 @@ import Dasboard from "../pages/Dashboard";
 import CashRegister from "../pages/CashRegister";
 import ProductAdd from "../pages/ProductAdd";
 import ProductList from "../pages/ProductList";
-const NotFound = () => {
-    return (
-        <>
-            <Index />
-            <h1>404 not Found</h1>
-        </>
-    );
-};
+import NotFound from "../pages/NotFound";
+
 export const Routing = () => {
     return (
         <Main>

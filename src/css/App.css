@@ -124,3 +124,7 @@ body::-webkit-scrollbar {
     background: var(--main-background-color);
     text-decoration: none !important;
 }
+.error_404_title {
+    text-align: center;
+    font-size: 140px;
+}
