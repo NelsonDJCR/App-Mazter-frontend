@@ -28,13 +28,11 @@ export const Routing = () => {
                     </Routes>
                 </Main>
             ) : (
-                <>
-                    <Routes>
-                        <Route path="*" element={<>404</>} />
-                        <Route path="/" element={<>Home</>} />
-                        <Route path="/login" element={<Login />} />
-                    </Routes>
-                </>
+                <Routes>
+                    <Route path="*" element={<>404</>} />
+                    <Route path="/" element={<>Home</>} />
+                    <Route path="/login" element={<Login />} />
+                </Routes>
             )}
         </>
     );
