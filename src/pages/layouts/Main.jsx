@@ -22,9 +22,9 @@ const Main = (props) => {
         <div className="main-wrapper">
             <div className="header">
                 <div className="header-left">
-                    <Link href="index.html" className="logo logo-small">
+                    <Link href="/" className="logo logo-small">
                         <img
-                            src="assets/img/logo-icon.png"
+                            src="https://i.postimg.cc/W4TmMpj2/image-2023-02-12-091206780.png"
                             alt="Logo"
                             width="30"
                             height="30"

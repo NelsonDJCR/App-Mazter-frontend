@@ -1289,7 +1289,7 @@ button.bg-danger:hover {
 }
 
 .table__custom {
-    color: var(--text-white-color);
+    color: var(--text-white-color) !important;
 }
 
 .bootstrap-datetimepicker-widget table td.today:before {
