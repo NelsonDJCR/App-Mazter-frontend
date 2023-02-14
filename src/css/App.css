@@ -1,0 +1,122 @@
+@import url(root.css);
+body {
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+.show-element {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+}
+.hide-element {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+    0% {
+        height: 0;
+        opacity: 0;
+        display: none !important;
+    }
+    100% {
+        height: 164px;
+        opacity: 1;
+        display: block !important;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        height: 164px;
+        opacity: 1;
+        display: block !important;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+        display: none !important;
+    }
+}
+
+.filter-btn {
+    box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.02);
+    border: 1px solid var(--text-white-color);
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-white-color) !important;
+    border-radius: 10px;
+    background: var(--secondary-background-color) !important;
+}
+.filter-btn:hover,
+.filter-btn-select {
+    background-color: var(--text-white-color);
+    color: #fff;
+}
+
+.mazter__btn__primary {
+    background: var(--text-white-color) !important;
+    color: var(--text-white-color);
+    position: relative;
+}
+.mazter__btn__primary:hover {
+    background: var(--main-background-color) !important;
+    color: var(--text-white-color) !important;
+    border: 1px solid var(--text-white-color);
+    transition: .3s  ;
+    /* top: -5px; */
+    transform: translate(0px,-5px);
+}
+.mazter__btn__secondary {
+    background: var(--main-background-color);
+    color: var(--text-white-color) !important;
+}
+.mazter__btn__secondary:hover {
+    background: var(--secondary-background-color);
+    color: var(--text-white-color);
+}
+
+.mazter__bg__secondary {
+    background-color: var(--secondary-background-color) !important;
+}
+
+.mazter__logo__menu {
+    height: 45px;
+}
+.mazter__icon__logout {
+    margin-right: 15px;
+    color: var(--text-white-color);
+}
+.mazter__color__white {
+    color: var(--text-white-color) !important;
+}
+
+.mazter__img__add__product {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.mazter__card__none__color {
+    background: none !important;
+}
+
+.box__img__product::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(253, 29, 29, 0) 35%, #202b38 98%);
+}
