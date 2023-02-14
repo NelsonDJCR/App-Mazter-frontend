@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { configApi, urlApi } from "../helpers/helper";
 const Dashboard = () => {
     const [totalSales, setTotalSales] = useState("");
+    const [name, setName] = useState("");
     const [totalProductsRegister, setTotalProductsRegister] = useState("");
 
     useEffect(() => {
@@ -10,6 +11,7 @@ const Dashboard = () => {
             .get(urlApi("dashboard_homeDetails"), configApi())
             .then(function (response) {
                 setTotalSales(response.data.totalSales);
+                setName(response.data.user.name);
                 setTotalProductsRegister(response.data.totalProductsRegister);
             });
     }, []);
@@ -20,7 +22,7 @@ const Dashboard = () => {
                     <div className="row">
                         <div className="col-12">
                             <h3 className="page-title mazter__color__white">
-                                Bienvenido name!
+                                Bienvenido {name}!
                             </h3>
                         </div>
                     </div>
