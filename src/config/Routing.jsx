@@ -9,18 +9,34 @@ import CashRegister from "../pages/CashRegister";
 import ProductAdd from "../pages/ProductAdd";
 import ProductList from "../pages/ProductList";
 import NotFound from "../pages/NotFound";
-
+import Login from "../pages/Login";
 export const Routing = () => {
+    const auth = true;
     return (
-        <Main>
-            <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/dashboard" element={<Dasboard />} />
-                <Route path="/cash-register" element={<CashRegister />} />
-                <Route path="/product-add" element={<ProductAdd />} />
-                <Route path="/product-list" element={<ProductList />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </Main>
-    )
-}
+        <>
+            {auth ? (
+                <Main>
+                    <Routes>
+                        <Route path="/" element={<Dasboard />} />
+                        <Route path="/dashboard" element={<Dasboard />} />
+                        <Route
+                            path="/cash-register"
+                            element={<CashRegister />}
+                        />
+                        <Route path="/product-add" element={<ProductAdd />} />
+                        <Route path="/product-list" element={<ProductList />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </Main>
+            ) : (
+                <>
+                    <Routes>
+                        <Route path="*" element={<>404</>} />
+                        <Route path="/" element={<>Home</>} />
+                        <Route path="/login" element={<Login />} />
+                    </Routes>
+                </>
+            )}
+        </>
+    );
+};
