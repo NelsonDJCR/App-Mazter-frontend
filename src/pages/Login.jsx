@@ -1,36 +1,32 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { configApi, urlApi } from "../helpers/helper";
 import "../css/App.css";
+import { AuthContext } from "../context/AuthContext";
+import { UserContext } from "../context/UserContext";
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const [msgErrorLogin, setMsgErrorLogin] = useState("");
     const navigate = useNavigate();
-
+    const authCtx = useContext(AuthContext);
+    const userCtx = useContext(UserContext);
     function login(data) {
         axios
             .post(urlApi("login"), data, configApi())
-            .then(function (r) {
-                userData.setResponse({
-                    name: r.data.name,
-                    role: r.data.role_id,
-                    auth: true,
-                    bearer: r.data.token,
-                });
-                localStorage.setItem("bearer", r.data.token);
-                routeChange();
+            .then(function (response) {
+                authCtx.setAuth(true);
+                userCtx.setUser(response.data.user);
+                navigate("/");
+                localStorage.setItem("bearer", response.data.token);
             })
-            .catch(function () {
+            .catch(function (response) {
                 setMsgErrorLogin("Datos incorrectos intente nuevamente");
             });
     }
-    const routeChange = () => {
-        let path = `/app/dashboard`;
-        navigate(path);
-    };
+
     return (
         <div>
             <div className="main-wrapper">

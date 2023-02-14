@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../css/admin.css";
 import "../../css/App.css";
 import "../../css/Xd.css";
@@ -7,6 +7,11 @@ import "../../css/font-awesome.min.css";
 import "../../plugins/fontawesome/css/all.min.css";
 import { Link } from "react-router-dom";
 import Menu from "./Menu";
+import { configApi, urlApi } from "../../helpers/helper";
+import { AuthContext } from "../../context/AuthContext";
+import { UserContext } from "../../context/UserContext";
+import axios from "axios";
+
 $(".page-wrapper,.header").on("click", function () {
     if ($(".slide-nav") !== null) {
         var $wrapper = $(".main-wrapper");
@@ -28,7 +33,19 @@ function showMenu() {
     $(".sidebar-overlay").toggleClass("opened");
     $("html").addClass("menu-opened");
 }
+
 const Main = (props) => {
+    const authCtx = useContext(AuthContext);
+    const userCtx = useContext(UserContext);
+
+    const logout = async () => {
+        axios.get(urlApi("logout"), configApi());
+        authCtx.setAuth(false);
+        userCtx.setUser(false);
+        localStorage.clear();
+        return redirect("/");
+    };
+
     return (
         <div className="main-wrapper">
             <div className="header">
@@ -50,6 +67,7 @@ const Main = (props) => {
                         <Link
                             className="dropdown-toggle nav-link mazter__icon__logout"
                             data-toggle="dropdown"
+                            onClick={logout}
                         >
                             <i
                                 className="fa fa-power-off mazter__color__white"

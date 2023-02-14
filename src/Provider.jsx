@@ -1,9 +1,9 @@
 import AuthContextProvider from "./context/AuthContext";
-import UserContextProvider from "./context/userContext";
+import UserContextProvider from "./context/UserContext";
 export default function Provider({ children }) {
     return (
-        <UserContextProvider>
-            <AuthContextProvider>{children}</AuthContextProvider>
-        </UserContextProvider>
+        <AuthContextProvider>
+            <UserContextProvider>{children}</UserContextProvider>
+        </AuthContextProvider>
     );
 }
