@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../css/admin.css";
 import "../../css/App.css";
 import "../../css/Xd.css";
@@ -36,13 +36,14 @@ function showMenu() {
 
 const Main = (props) => {
     const authCtx = useContext(AuthContext);
+    const navigate = useNavigate();
     const userCtx = useContext(UserContext);
     const logout = () => {
         axios.get(urlApi("logout"), configApi()).then(function () {
             authCtx.setAuth(false);
             userCtx.setUser(false);
             localStorage.clear();
-            window.location.href = "/";
+            navigate("/");
         });
     };
 

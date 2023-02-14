@@ -19,7 +19,7 @@ const Login = () => {
             .then(function (response) {
                 authCtx.setAuth(true);
                 userCtx.setUser(response.data.user);
-                navigate("/");
+                navigate("/dashboard");
                 localStorage.setItem("bearer", response.data.token);
             })
             .catch(function (response) {
