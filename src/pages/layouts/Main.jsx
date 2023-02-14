@@ -3,11 +3,8 @@ import "../../css/admin.css";
 import "../../css/App.css";
 import "../../css/Xd.css";
 import $ from "jquery";
-// import "../../plugins/jquery/index";
-// import "../../plugins/jquery/index";
 import "../../css/font-awesome.min.css";
 import "../../plugins/fontawesome/css/all.min.css";
-
 import { Link } from "react-router-dom";
 import Menu from "./Menu";
 $(".page-wrapper,.header").on("click", function () {
@@ -25,6 +22,12 @@ $(window).scroll(function () {
         $(".header").removeClass("fixed-header");
     }
 });
+function showMenu() {
+    var $wrapper = $(".main-wrapper");
+    $wrapper.toggleClass("slide-nav");
+    $(".sidebar-overlay").toggleClass("opened");
+    $("html").addClass("menu-opened");
+}
 const Main = (props) => {
     return (
         <div className="main-wrapper">
@@ -39,7 +42,7 @@ const Main = (props) => {
                         />
                     </Link>
                 </div>
-                <Link className="mobile_btn" id="mobile_btn">
+                <Link className="mobile_btn" onClick={showMenu} id="mobile_btn">
                     <i className="fas fa-align-left"></i>
                 </Link>
                 <ul className="nav user-menu">

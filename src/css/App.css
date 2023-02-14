@@ -1,7 +1,7 @@
 @import url(root.css);
-body {
-    scrollbar-width: none;
-    overflow-y: scroll;
+body::-webkit-scrollbar {
+    /* Work Chrome and Opera */
+    display: none;
 }
 
 .show-element {
@@ -67,9 +67,9 @@ body {
     background: var(--main-background-color) !important;
     color: var(--text-white-color) !important;
     border: 1px solid var(--text-white-color);
-    transition: .3s  ;
+    transition: 0.3s;
     /* top: -5px; */
-    transform: translate(0px,-5px);
+    transform: translate(0px, -5px);
 }
 .mazter__btn__secondary {
     background: var(--main-background-color);
@@ -120,7 +120,7 @@ body {
     z-index: 2;
     background: linear-gradient(90deg, rgba(253, 29, 29, 0) 35%, #202b38 98%);
 }
-.is-active{
+.is-active {
     background: var(--main-background-color);
     text-decoration: none !important;
 }
