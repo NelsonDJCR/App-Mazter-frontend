@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-// import ModalProductUpdate from "../components/modals/ModalProductUpdate";
 import { configApi, urlApi } from "../helpers/helper";
 
 const ProductList = () => {

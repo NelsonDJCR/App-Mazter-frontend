@@ -1,4 +1,3 @@
-/* eslint-disable array-callback-return */
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import $ from "jquery";

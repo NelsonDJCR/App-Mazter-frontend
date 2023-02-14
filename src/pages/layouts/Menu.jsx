@@ -1,15 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { NavLink } from "../../components/NavLink";
 const Menu = () => {
-    const prefix = "/app/";
-    let location = useLocation();
-
     return (
         <div className="sidebar" id="sidebar">
             <div className="sidebar-logo">
                 <Link href="index.html">
                     <img
-                        // src="https://i.postimg.cc/v8fBdrfN/image-2023-02-12-091041793.png"
                         src="https://i.postimg.cc/W4TmMpj2/image-2023-02-12-091206780.png"
                         className="img-fluid mazter__logo__menu"
                         alt=""
