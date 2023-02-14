@@ -8,12 +8,13 @@ import ProductAdd from "../pages/ProductAdd";
 import ProductList from "../pages/ProductList";
 import NotFound from "../pages/NotFound";
 import Login from "../pages/Login";
+import Home from "../pages/Home";
 export const Routing = () => {
     const authCtx = useContext(AuthContext);
 
     return (
         <>
-            {authCtx.auth ? (
+            {localStorage.getItem("bearer") ? (
                 <Main>
                     <Routes>
                         <Route path="/" element={<Dasboard />} />
@@ -30,7 +31,7 @@ export const Routing = () => {
             ) : (
                 <Routes>
                     <Route path="*" element={<>404</>} />
-                    <Route path="/" element={<>Home</>} />
+                    <Route path="/" element={<Home/>} />
                     <Route path="/login" element={<Login />} />
                 </Routes>
             )}

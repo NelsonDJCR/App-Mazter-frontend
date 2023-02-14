@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import "../../css/admin.css";
 import "../../css/App.css";
 import "../../css/Xd.css";
 import $ from "jquery";
 import "../../css/font-awesome.min.css";
 import "../../plugins/fontawesome/css/all.min.css";
-import { Link } from "react-router-dom";
 import Menu from "./Menu";
 import { configApi, urlApi } from "../../helpers/helper";
 import { AuthContext } from "../../context/AuthContext";
@@ -37,13 +37,13 @@ function showMenu() {
 const Main = (props) => {
     const authCtx = useContext(AuthContext);
     const userCtx = useContext(UserContext);
-
-    const logout = async () => {
-        axios.get(urlApi("logout"), configApi());
-        authCtx.setAuth(false);
-        userCtx.setUser(false);
-        localStorage.clear();
-        return redirect("/");
+    const logout = () => {
+        axios.get(urlApi("logout"), configApi()).then(function (response) {
+            authCtx.setAuth(false);
+            userCtx.setUser(false);
+            localStorage.clear();
+            window.location.href = "/";
+        });
     };
 
     return (
