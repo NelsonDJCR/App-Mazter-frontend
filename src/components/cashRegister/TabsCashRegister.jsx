@@ -116,38 +116,44 @@ const TabsCashRegister = (props) => {
     }
     return (
         <div className="col-12">
-            {props.tabs
-                ? props.tabs.map((item, key) => (
-                      <div key={key}>
-                          <li
-                              className={
-                                  props.cartShowing === item.shopping_cart_id
-                                      ? "nav-item active"
-                                      : "nav-item"
-                              }
-                          >
-                              <div
-                                  className="nav-link c-pointer"
-                                  onClick={() =>
-                                      changeProductsCart(item.shopping_cart_id)
+            <div className="col-5 item__cashresgister">
+                {props.tabs
+                    ? props.tabs.map((item, key) => (
+                          <div key={key} className="s">
+                              <li
+                                  className={
+                                      props.cartShowing ===
+                                      item.shopping_cart_id
+                                          ? "nav-item active"
+                                          : "nav-item"
                                   }
                               >
-                                  Caja {key + 1}
-                              </div>
-                          </li>
-                      </div>
-                  ))
-                : null}
-            <li className="nav-item">
-                {props.cartShowing ? (
-                    <div
-                        className="nav-link c-pointer"
-                        onClick={() => addNewCart()}
-                    >
-                        <i className="fas fa-plus-square text-primary"></i>
-                    </div>
-                ) : null}
-            </li>
+                                  <div
+                                      className="nav-link c-pointer"
+                                      onClick={() =>
+                                          changeProductsCart(
+                                              item.shopping_cart_id
+                                          )
+                                      }
+                                  >
+                                      Caja {key + 1}
+                                  </div>
+                              </li>
+                          </div>
+                      ))
+                    : null}
+                <li className="nav-item">
+                    {props.cartShowing ? (
+                        <div
+                            className="nav-link c-pointer"
+                            onClick={() => addNewCart()}
+                        >
+                            <i className="fas fa-plus-square text-primary"></i>
+                        </div>
+                    ) : null}
+                </li>
+            </div>
+
             <div className="table-responsive mt-4 col-12">
                 {props.productsShowing ? (
                     <TableCashRegister
@@ -180,7 +186,6 @@ const TabsCashRegister = (props) => {
                 ) : (
                     <h1 className="text-center">Registrar nueva venta</h1>
                 )}
-
             </div>
         </div>
     );

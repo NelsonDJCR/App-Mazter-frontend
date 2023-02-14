@@ -13,6 +13,9 @@ body {
     line-height: 1.5;
     overflow-x: hidden;
 }
+.item__cashresgister{
+    display: flex !important;
+}
 .valueTotal {
     font-size: 7em;
 }
