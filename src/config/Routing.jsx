@@ -1,3 +1,4 @@
+import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Main from "../pages/layouts/Main";
@@ -7,7 +8,6 @@ import ProductAdd from "../pages/ProductAdd";
 import ProductList from "../pages/ProductList";
 import NotFound from "../pages/NotFound";
 import Login from "../pages/Login";
-import { AuthContext } from "../context/AuthContext";
 export const Routing = () => {
     const authCtx = useContext(AuthContext);
 
