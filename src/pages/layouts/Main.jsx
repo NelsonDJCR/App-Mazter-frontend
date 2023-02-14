@@ -38,7 +38,7 @@ const Main = (props) => {
     const authCtx = useContext(AuthContext);
     const userCtx = useContext(UserContext);
     const logout = () => {
-        axios.get(urlApi("logout"), configApi()).then(function (response) {
+        axios.get(urlApi("logout"), configApi()).then(function () {
             authCtx.setAuth(false);
             userCtx.setUser(false);
             localStorage.clear();
