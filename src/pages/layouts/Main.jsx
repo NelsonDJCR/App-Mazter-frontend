@@ -2,21 +2,29 @@ import React from "react";
 import "../../css/admin.css";
 import "../../css/App.css";
 import "../../css/Xd.css";
-// import "./components/jquery/index.js";
+import $ from "jquery";
 // import "../../plugins/jquery/index";
-// import "../../css/font-awesome.min.css";
-// import "../../plugins/fontawesome/css/all.min.css";
+// import "../../plugins/jquery/index";
+import "../../css/font-awesome.min.css";
+import "../../plugins/fontawesome/css/all.min.css";
 
 import { Link } from "react-router-dom";
 import Menu from "./Menu";
-// $(".page-wrapper,.header").on("click", function () {
-//     if ($(".slide-nav") !== null) {
-//         var $wrapper = $(".main-wrapper");
-//         $wrapper.removeClass("slide-nav");
-//         $(".sidebar-overlay").removeClass("opened");
-//         $("html").removeClass("menu-opened");
-//     }
-// });
+$(".page-wrapper,.header").on("click", function () {
+    if ($(".slide-nav") !== null) {
+        var $wrapper = $(".main-wrapper");
+        $wrapper.removeClass("slide-nav");
+        $(".sidebar-overlay").removeClass("opened");
+        $("html").removeClass("menu-opened");
+    }
+});
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= 30) {
+        $(".header").addClass("fixed-header");
+    } else {
+        $(".header").removeClass("fixed-header");
+    }
+});
 const Main = (props) => {
     return (
         <div className="main-wrapper">
