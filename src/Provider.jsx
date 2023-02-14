@@ -1,9 +1,4 @@
-import ExampleContextProvider from "./context/ExampleContext";
-import NelsonContextProvider from "./context/NelsonContext";
+import AuthContextProvider from "./context/AuthContext";
 export default function Provider({ children }) {
-    return (
-        <NelsonContextProvider>
-            <ExampleContextProvider>{children}</ExampleContextProvider>
-        </NelsonContextProvider>
-    );
+    return <AuthContextProvider>{children}</AuthContextProvider>;
 }

@@ -1,8 +1,5 @@
 import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
-import Index from "../components/Index";
-import { ExampleContext } from "../context/ExampleContext";
-import { NelsonContext } from "../context/NelsonContext";
 import Main from "../pages/layouts/Main";
 import Dasboard from "../pages/Dashboard";
 import CashRegister from "../pages/CashRegister";
@@ -10,11 +7,13 @@ import ProductAdd from "../pages/ProductAdd";
 import ProductList from "../pages/ProductList";
 import NotFound from "../pages/NotFound";
 import Login from "../pages/Login";
+import { AuthContext } from "../context/AuthContext";
 export const Routing = () => {
-    const auth = true;
+    const authCtx = useContext(AuthContext);
+
     return (
         <>
-            {auth ? (
+            {authCtx.auth ? (
                 <Main>
                     <Routes>
                         <Route path="/" element={<Dasboard />} />
