@@ -118,7 +118,7 @@ body::-webkit-scrollbar {
     height: 100%;
     width: 100%;
     z-index: 2;
-    background: linear-gradient(90deg, rgba(253, 29, 29, 0) 35%, #202b38 98%);
+    background: linear-gradient(90deg, rgba(253, 29, 29, 0) 5%, #121c27 98%);
 }
 .is-active {
     background: var(--main-background-color);
