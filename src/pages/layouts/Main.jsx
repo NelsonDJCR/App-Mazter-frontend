@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../css/admin.css";
 import "../../css/App.css";
@@ -8,8 +8,8 @@ import "../../css/font-awesome.min.css";
 import "../../plugins/fontawesome/css/all.min.css";
 import Menu from "./Menu";
 import { configApi, urlApi } from "../../helpers/helper";
-import { AuthContext } from "../../context/AuthContext";
-import { UserContext } from "../../context/UserContext";
+// import { AuthContext } from "../../context/AuthContext";
+// import { UserContext } from "../../context/UserContext";
 import axios from "axios";
 
 $(".page-wrapper,.header").on("click", function () {
@@ -35,13 +35,13 @@ function showMenu() {
 }
 
 const Main = (props) => {
-    const authCtx = useContext(AuthContext);
+    // const authCtx = useContext(AuthContext);
     const navigate = useNavigate();
-    const userCtx = useContext(UserContext);
+    // const userCtx = useContext(UserContext);
     const logout = () => {
         axios.get(urlApi("logout"), configApi()).then(function () {
-            authCtx.setAuth(false);
-            userCtx.setUser(false);
+            // authCtx.setAuth(false);
+            // userCtx.setUser(false);
             localStorage.clear();
             navigate("/");
         });
