@@ -1,4 +1,4 @@
-import { AuthContext } from "../context/AuthContext";
+// import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Main from "../pages/layouts/Main";
@@ -10,7 +10,7 @@ import NotFound from "../pages/NotFound";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 export const Routing = () => {
-    const authCtx = useContext(AuthContext);
+    // const authCtx = useContext(AuthContext);
 
     return (
         <>

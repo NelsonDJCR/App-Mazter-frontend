@@ -1,24 +1,24 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { configApi, urlApi } from "../helpers/helper";
 import "../css/App.css";
-import { AuthContext } from "../context/AuthContext";
-import { UserContext } from "../context/UserContext";
+// import { AuthContext } from "../context/AuthContext";
+// import { UserContext } from "../context/UserContext";
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const [msgErrorLogin, setMsgErrorLogin] = useState("");
     const navigate = useNavigate();
-    const authCtx = useContext(AuthContext);
-    const userCtx = useContext(UserContext);
+    // const authCtx = useContext(AuthContext);
+    // const userCtx = useContext(UserContext);
     function login(data) {
         axios
             .post(urlApi("login"), data, configApi())
             .then(function (response) {
-                authCtx.setAuth(true);
-                userCtx.setUser(response.data.user);
+                // authCtx.setAuth(true);
+                // userCtx.setUser(response.data.user);
                 navigate("/dashboard");
                 localStorage.setItem("bearer", response.data.token);
             })
